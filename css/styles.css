@@ -1,0 +1,493 @@
+/* ==========================
+    1. CSS reset [reset.css] 
+     1.1 css reset 
+     1.2 Adobe font kit 
+     1.3 Add font face/font awesome
+    2. General Rules
+        2.1 Viewport
+        2.2 Root Element 
+        2.3 variables
+            2.3.1 color palette
+            2.3.2 type settings
+        2.4 HTMl character entities
+        2.4.1 Header/nav
+    3. Home Layout
+    4. Work page Layout
+    5. Agency page Layout
+    6. Brand page Layout
+   ========================== */
+/* 1. Imports  */
+/* 1.1 css reset */
+@import url(./reset.css);
+/* 1.2 Adobe font kit = mxh1vxy*/
+/* @import url("https://use.typekit.net/rsq2xeq.css"); */
+/* the second demo */
+@import url("https://use.typekit.net/die4ebl.css");
+@import url("https://use.typekit.net/mxh1vxy.css");
+/* 1.3 Add font face/font awesome  */
+/* go https://www.fontsquirrel.com and download a font  */
+/* now go https://www.fontsquirrel.com/tools/webfont-generator to generate web font  */
+@import url(./fonts.css);
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/* 2. General Rules*/
+
+/* 2.1 Viewport */
+viewport {
+    width: device-width;
+}
+
+/* 2.2 Root Element   */
+:root {
+    /*this is the root for all elements(nothing in front of :) */
+    font-size: 100%;
+
+}
+
+/* 2.3 Variables   */
+:root {
+    /*this is the root for all elements(nothing in front of :) */
+    /* 2.3 color palettes   */
+    --azure-c:#06aed5;
+    --deep-blue-c:#086788;
+    --egg-soup-c:#f0c808;
+    --light-meat-c:#fff1d0;
+    --orthodox-red-c:#dd1c1a;
+    --city-green-c:#B0D300;
+    --dark-gray-c: #333333;
+    --med-gray-c: #666666;
+    --light-gray-c: #999999;
+
+    /* 2.3.2 type settings */
+    --body-fonts: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', "Open Sans", "Droid Sans", sans-serif;
+    --call2action-fonts: bold;
+    --heading-fonts: italic;
+    /* 2.3.3 settings type*/
+    font-size: 1.1rem;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+
+/* 2.4 HTML general character Entities   */
+/* 2.4.1 mobile */
+
+body {
+
+    font-family: var(--body-fonts);
+    background-color: var(--light-meat-c);
+    color: var(--dark-gray-c);
+
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: var(--heading-fonts);
+    font-style: normal;
+    text-transform: uppercase;
+    z-index: 1;
+    opacity: 1;
+}
+h1{
+    
+    color: rgb(255, 255, 255);
+    z-index: 2;
+
+}
+h3{
+    color: var(--city-green-c);
+    text-align: center;
+}
+
+/* 2.4.1 screen/tablet */
+/* correct way to setup a, order cannot be changed */
+/* a,
+a:link,
+a:visited {
+    font-weight: var(--fiery-rose);
+    text-decoration: none;
+    color: var(--paradise-pink);
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+} */
+
+
+@supports(font-variant-caps: all-small-caps)
+{
+    abbr{
+        font-variant-caps: all-small-caps;
+        font-feature-settings: normal;
+    }  
+   
+}
+
+
+
+/* 2.4.2 Tablet */
+@media only screen and (min-width:32.5em) {
+
+}
+
+/* 2.5 general classes   */
+.hide {
+    display: none;
+  }
+.cl-egg-soup{
+    color: var(--egg-soup-c);
+    cursor: pointer;
+}
+.grayish-filter{
+    filter: grayscale(1);
+}
+.yellowish{
+    background-color: var(--egg-soup-c);
+}
+.greenish{
+    background-color: var(--city-green-c);
+}
+.blueish{
+    background-color: var(--azure-c);
+}
+.reddish{
+    background-color: var(--orthodox-red-c);
+}
+
+/* 3. Home Layout */
+/* 3.1 Header */
+
+
+    /* 3.1.1 Mobile */
+    header img{
+        height:50vw;
+        
+    }
+    .home-banner{
+       
+        width: 100%;
+    }
+    /* .home-banner img:nth-child(1){
+        filter: grayscale(1);
+    } */
+    .header-top{
+        width: 90%;
+        
+        position: absolute;
+        top: 0;
+        color: #FFF;
+        z-index: 2;
+        
+    }
+    .hover-filter{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top:-50vw;
+        opacity: 0.7;
+        color: var(--egg-soup-c);
+        /* mix-blend-mode: multiply; */
+    }
+    .hover-filter div:nth-child(1){
+        
+        width: 50%;
+        height:50vw;
+        background-color: var(--dark-gray-c);
+        /* display: none; */
+        transition: all .4s;
+    }
+
+    .hover-filter div:nth-child(1):hover {
+        /* display: inline-block; */
+        background-color: var(--azure-c);
+        mix-blend-mode:multiply;
+
+      }
+
+    .hover-filter div:nth-child(2){
+        width: 50%;
+        height:50vw;
+        background-color: var(--dark-gray-c);
+        transition: all .4s;
+        /* display: none; */
+    }
+
+    .hover-filter div:nth-child(2):hover {
+        /* display: inline-block; */
+        background-color: var(--azure-c);
+        mix-blend-mode: multiply;
+      }
+
+    .hover-filter h2{
+            margin-top: 75%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5vw;
+            opacity: 1;
+            /* mix-blend-mode:unset; */
+    }
+    .middle-banner{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+    /* 3.1.2 Tablet */
+    @media screen and (min-width: 32.5em) {
+        .middle-banner{
+            width: 60%;
+        
+        }
+        .header-top{
+            width: 94%;
+            margin: 0 3% 0 3%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 2.7vw;
+            opacity: 0.9;
+        }
+        .header-top h1 span{
+            font-size: 0.9vw;
+            font-weight: 200;
+        }
+    }
+          /* 3.1.2 Screen */
+    @media screen and (min-width: 48em) {
+        .middle-banner{
+            width: 40%;
+        
+        }
+    }
+
+/* 3.2 Navigation (it's within header actually, just to make it clearer and easier to edit)*/
+/* 3.2.1 mobile  */
+nav{
+    position: absolute;
+    top: -100vh;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--azure-c);
+    color: #FFF;
+    opacity: 1;
+    z-index: 5;
+    transition: all .5s;
+}
+
+nav ul li{
+    /* text-align: center; */
+    height: 20vh;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+/* X sign  */
+nav ul li:nth-child(1) span{
+    margin-left: 80%;
+    cursor: pointer;
+
+}
+nav ul li a,nav ul li a:link,nav ul li a:visited{
+    
+    text-decoration: none;
+    color: #FFF;
+}
+nav ul li a:hover,nav ul li a:visited{
+
+}
+/* 3.2.2 tablet */
+@media screen and (min-width: 32.5em) {
+    nav ul li{
+        font-size: 3.9vw;
+    }
+}
+
+
+/* 3.3 Main */
+
+/* 3.3.1 Mobile */
+main{
+    margin-top:-50vw ;
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.image-gallery-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image-gallery-home article{
+    flex: 50%;
+    /* offset the heading adjusted by position absolute  */
+   
+}
+
+.image-gallery-home article div:first-child{
+    height:50vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat ;
+}
+.image-gallery-home article .div-filter{
+    height:50vw;
+    width: 100%;
+    position:relative;
+    top:-50vw;
+    margin-bottom: -50vw;
+    mix-blend-mode: multiply;
+    display: none;
+    transition: all .3s;
+}
+.image-gallery-home article h4{
+    /* to achieve hover effect  */
+    color: #FFF;
+    position: relative;
+    /* to prevent overflow  */
+    max-width: 80%; 
+    top:-50%;
+    left:10%;
+    font-size: 2rem;
+    display: none;
+    opacity: 0.9;
+    transition: all .3s;
+    /* cancel extra margin  */
+    margin: 0;
+    padding: 0;
+    margin-bottom: -2rem;
+}
+.image-gallery-home article:nth-child(1) div:first-child{
+    background-image: url('../img/home/gallery-1.jpg');
+}
+.image-gallery-home article:nth-child(2) div:first-child{
+    background-image: url('../img/home/gallery-2.jpg');
+}
+.image-gallery-home article:nth-child(3) div:first-child{
+    background-image: url('../img/home/gallery-3.jpeg');
+}
+.image-gallery-home article:nth-child(4) div:first-child{
+    background-image: url('../img/home/gallery-4.jpg');
+}
+.image-gallery-home article:nth-child(5) div:first-child{
+    background-image: url('../img/home/gallery-5.jpg');
+    }
+.image-gallery-home article:nth-child(6) div:first-child{
+    background-image: url('../img/home/gallery-6.jpg');
+    }
+.image-gallery-home article:nth-child(7) div:first-child{
+    background-image: url('../img/home/gallery-7.jpg');
+    }
+.image-gallery-home article:nth-child(8) div:first-child{
+    background-image: url('../img/home/gallery-8.jpg');
+   }
+
+/* tablet  */
+@media screen and (min-width: 32.5em) {
+    .image-gallery-home article h4{
+        font-size: 2.4vw;
+        margin-bottom: -2.4vw;
+    }
+    .image-gallery-home article{
+        flex: 25%;
+        /* margin-bottom: -2.4vw; */
+    }
+    .image-gallery-home article div:first-child{
+        height:20vw;
+    }
+    .image-gallery-home article .div-filter{
+        height:20vw;
+        position:relative;
+        top:-20vw;
+        margin-bottom: -20vw;
+        mix-blend-mode: multiply;
+    }
+
+
+}
+/* 3.4 Footer */
+/* 3.4.1 Mobile */
+footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+footer div:nth-child(1){
+background-color: var(--azure-c);
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-end;
+}
+footer div:nth-child(1) h3{
+    color: #FFF !important;
+}
+footer div:nth-child(2){
+background-color: var(--city-green-c);
+}
+footer div:nth-child(2) address ul{
+    display: flex;
+    flex-direction: column;
+}
+/* 3.4.1 Tablet/Screen */
+@media screen and (min-width: 32.5em) {
+    footer{
+        display: flex;
+        flex-direction: row;
+        color: #FFF;
+    }
+        footer div:nth-child(1){
+            width: 50%;
+        }
+        footer div:nth-child(2){
+        width: 50%;
+        }
+        footer div:nth-child(2) address ul{
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+}
+
+
+
+/* 4. work page layout */
+
+/* 4.1 Main  */
+/* 4.1.1 Mobile  */
+.work-image-gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap ;
+    
+
+}
+.image-gallery-row{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+.image-gallery-column{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 30%;
+    max-width: 30%;
+    -ms-flex: 30%; /* IE10 */
+
+}
+.image-gallery-column img{
+    margin-top: 0.5rem;
+    vertical-align: middle;
+    width: 100%;
+}
+/* 4.1.2 Tablet  */
+@media screen and (min-width: 32.5em) {
+
+    
+}
