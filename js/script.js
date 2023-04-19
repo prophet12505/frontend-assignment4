@@ -2,12 +2,12 @@
 $(".image-gallery-home article").on("mouseover", function() {
   console.log("mose is over");
   $(this).find(".div-filter").css("display", "inherit");
-  $(this).find("h4").css("display", "inherit");
+  $(this).find("h4").css("visibility", "visible");
 });
 $(".image-gallery-home article").on("mouseout", function() {
   console.log("mose is out");
   $(this).find(".div-filter").css("display", "none");
-  $(this).find("h4").css("display", "none");
+  $(this).find("h4").css("visibility", "hidden");
 });
 
 

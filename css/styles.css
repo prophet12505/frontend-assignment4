@@ -98,7 +98,11 @@ h1{
 h3{
     color: var(--city-green-c);
     text-align: center;
+   
 }
+/* p{
+    font-size: 1.2vw;
+} */
 
 /* 2.4.1 screen/tablet */
 /* correct way to setup a, order cannot be changed */
@@ -121,7 +125,6 @@ a:active {
         font-variant-caps: all-small-caps;
         font-feature-settings: normal;
     }  
-   
 }
 
 
@@ -136,7 +139,7 @@ a:active {
     display: none;
   }
 .cl-egg-soup{
-    color: var(--egg-soup-c);
+    color: var(--light-meat-c);
     cursor: pointer;
 }
 .grayish-filter{
@@ -154,107 +157,120 @@ a:active {
 .reddish{
     background-color: var(--orthodox-red-c);
 }
+.blend-multiply{
+    /* z-index: 6; */
+    mix-blend-mode:multiply;
+}
 
 /* 3. Home Layout */
 /* 3.1 Header */
 
 
     /* 3.1.1 Mobile */
+    .header-top{
+        width: 90%;
+        margin: 0 3% 0 3%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 2rem;
+        opacity: 0.9;
+
+        position: absolute;
+        top: 0;
+        color: #FFF;
+        z-index: 2;
+    }
+    .header-top h1 span{
+        font-size: 0.5rem;
+        font-weight: 200;
+    }
     header img{
         height:50vw;
         
     }
     .home-banner{
        
+        margin-bottom: -40vw;
+    }
+    .banner{
         width: 100%;
     }
     /* .home-banner img:nth-child(1){
         filter: grayscale(1);
     } */
-    .header-top{
-        width: 90%;
-        
-        position: absolute;
-        top: 0;
-        color: #FFF;
-        z-index: 2;
-        
-    }
+   
     .hover-filter{
-        display: flex;
-        flex-direction: row;
+        display: inline-block;
+        /* flex-direction: row; */
         position: relative;
+        width: 50%;
         top:-50vw;
         opacity: 0.7;
         color: var(--egg-soup-c);
+        margin: 0;
+        padding: 0;
         margin-bottom: -50vw;
-        /* mix-blend-mode: multiply; */
-    }
-    .hover-filter div:nth-child(1){
-        
-        width: 50%;
-        height:50vw;
-        background-color: var(--dark-gray-c);
-        /* display: none; */
-        transition: all .4s;
-    }
-  
 
-    .hover-filter div:nth-child(1):hover {
-        /* display: inline-block; */
-        background-color: var(--azure-c);
-        mix-blend-mode:multiply;
-
-      }
-
-    .hover-filter div:nth-child(2){
-        width: 50%;
         height:50vw;
         background-color: var(--dark-gray-c);
         transition: all .4s;
-        /* display: none; */
+        /* test  */
+      
+        /* color-dodge */
     }
 
-    .hover-filter div:nth-child(2):hover {
-        /* display: inline-block; */
+    .hover-filter:hover{
         background-color: var(--azure-c);
-        mix-blend-mode: multiply;
-      }
+        /* mix-blend-mode:difference; */
+        mix-blend-mode:difference;
+    }
+    .hover-filter:hover  h2{
+       
+        visibility:visible;
+    }
 
     .hover-filter h2{
             margin-top: 75%;
             margin-left: 50%;
             transform: translateX(-50%);
             font-size: 2.5vw;
+            /* margin-bottom: -5vw; */
             opacity: 1;
+            isolation: isolate;
+            position: relative;
+            z-index: 99;
             /* mix-blend-mode:unset; */
+            visibility: hidden;
     }
     .middle-banner{
         width: 80%;
         margin: 2rem auto;
         text-align: center;
     }
-
+    .middle-banner h3{
+        font-size: 140%;
+        margin-bottom: 1rem;
+    }
+    .middle-banner p{
+        color: var(--azure-c);
+    }
 
     /* 3.1.2 Tablet */
     @media screen and (min-width: 32.5em) {
-        .middle-banner{
-            width: 60%;
-            
-        }
         .header-top{
-            width: 94%;
-            margin: 0 3% 0 3%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-size: 2.7vw;
-            opacity: 0.9;
+            font-size: 2.3vw;
+   
         }
         .header-top h1 span{
             font-size: 0.9vw;
             font-weight: 200;
         }
+        .middle-banner{
+            width: 60%;
+            
+        }
+        
     }
           /* 3.1.2 Screen */
     @media screen and (min-width: 48em) {
@@ -343,6 +359,7 @@ main{
     margin-bottom: -50vw;
     mix-blend-mode: multiply;
     display: none;
+    /* visibility: visible; */
     /* transition: all .3s; */
 }
 .image-gallery-home article h4{
@@ -354,7 +371,8 @@ main{
     top:-50%;
     left:10%;
     font-size: 2rem;
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     opacity: 0.9;
     transition: all .3s;
     /* cancel extra margin  */
@@ -416,6 +434,9 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: #FFF
+    /* font-weight: 300;
+    font-style: italic; */
 }
 footer div:nth-child(1){
 background-color: var(--azure-c);
@@ -424,6 +445,8 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-end;
+/* padding-bottom: 2rem; */
+
 }
 footer div:nth-child(1) h3{
     color: #FFF !important;
@@ -432,6 +455,7 @@ footer div:nth-child(2){
 background-color: var(--city-green-c);
 }
 footer div:nth-child(2) address ul{
+  
     display: flex;
     flex-direction: column;
 }
@@ -441,14 +465,19 @@ footer div:nth-child(2) address ul{
         display: flex;
         flex-direction: row;
         color: #FFF;
+        font-size: 1.3vw;
     }
         footer div:nth-child(1){
             width: 50%;
+            padding: 0 2rem 2rem;
         }
         footer div:nth-child(2){
         width: 50%;
         }
         footer div:nth-child(2) address ul{
+            margin: 2rem auto;
+            margin-left: 40%;
+            width: 50%;
             display: flex;
             flex-direction: column;
             text-align: right;
@@ -467,7 +496,7 @@ footer div:nth-child(2) address ul{
     margin-bottom: -50vw;
     /* mix-blend-mode: multiply; */
 }
-.home-banner img{
+.banner img{
     height: 50vw;
 
 }
@@ -479,7 +508,7 @@ footer div:nth-child(2) address ul{
 }
 /* 4.1.2 Tablet  */
 @media screen and (min-width: 32.5em) {
-    .home-banner img{
+    .banner img{
         height: 40vw;
     
     }
@@ -511,8 +540,8 @@ footer div:nth-child(2) address ul{
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    flex: 30%;
-    max-width: 30%;
+    flex: 45%;
+    /* max-width: 30%; */
     -ms-flex: 30%; /* IE10 */
 
 }
@@ -530,6 +559,9 @@ footer div:nth-child(2) address ul{
 }
 /* 4.2.2 Tablet  */
 @media screen and (min-width: 32.5em) {
+    .image-gallery-column{
+        flex: 20%;
+    }
     .main-heading-work{
         font-size: 7.8vw;
         top: -10vw;
@@ -576,4 +608,34 @@ footer div:nth-child(2) address ul{
         max-width: 60%;
     }
 }
-/* 5.2.2 Screen  */
+/* 5.2.3 Screen  */
+
+/* 6. agency page layout */
+/* 6.1 Header  */
+
+/* 6.2 Main  */
+/* 6.2.1 Mobile  */
+.agency-gallery-heading{
+    color: var(--light-meat-c);
+    margin-top: 40%;
+    font-size: 200%;
+    font-weight: 800;
+}
+.image-gallery-agency{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.image-gallery-agency div{
+    flex: 100%;
+}
+/* 6.2.2 Tablet  */
+@media screen and (min-width: 32.5em) {
+.image-gallery-agency{
+    
+}
+.image-gallery-agency div{
+    flex: 50%;
+}
+}
+/* 6.2.3 Screen  */
